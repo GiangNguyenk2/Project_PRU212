@@ -7,11 +7,12 @@ TagManager:
   - Ground
   - Traps
   - Items
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - player
   - Water
   - UI
   - 
