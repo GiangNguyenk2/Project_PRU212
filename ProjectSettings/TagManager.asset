@@ -7,15 +7,17 @@ TagManager:
   - Ground
   - Traps
   - Items
+  - Enemy
+  - Turtle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - player
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Turtle
   - 
   - 
   - 
