@@ -8,6 +8,7 @@ TagManager:
   - Traps
   - Items
   - Enemy
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
