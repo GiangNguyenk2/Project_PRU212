@@ -34,11 +34,30 @@ public class Health : MonoBehaviour
             if (!dead)
             {
                 anim.SetTrigger("die");
-                GetComponent<PlayerMovement>().enabled = false;
+                //player
+                if(GetComponent<PlayerMovement>() != null)
+                {
+                    GetComponent<PlayerMovement>().enabled = false;
+                }
+                //Enemy
+                if (GetComponent<EnemyPatrol>() != null)
+                {
+                    GetComponent<EnemyPatrol>().enabled = false;
+                    Die();
+                }
+                if(GetComponent<AIChase>() != null)
+                {
+                    GetComponent<AIChase>().enabled = false;
+                    Die();
+                }
                 dead = true;
                 
             }
         }
+    }
+    public void Die()
+    {
+        Destroy(gameObject);
     }
     public void AddHealth(float _value)
     {
