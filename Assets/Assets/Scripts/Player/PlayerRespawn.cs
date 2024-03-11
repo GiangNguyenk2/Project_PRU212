@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerRespawn : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class PlayerRespawn : MonoBehaviour
         }
         else
         {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             Debug.LogWarning("Không có checkpoint nào được gán! Không thể hồi sinh."); // Hiển thị cảnh báo nếu không có checkpoint được gán
         }
     }

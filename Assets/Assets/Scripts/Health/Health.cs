@@ -14,6 +14,7 @@ public class Health : MonoBehaviour
     [SerializeField] private int numberOfFlashes;
     private SpriteRenderer spriteRend;
 
+    [SerializeField] private UIManager uIManager;
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -36,28 +37,33 @@ public class Health : MonoBehaviour
                 anim.SetTrigger("die");
                 //player
                 if(GetComponent<PlayerMovement>() != null)
-                {
+                { 
                     GetComponent<PlayerMovement>().enabled = false;
+                    StartCoroutine(Die());
                 }
                 //Enemy
                 if (GetComponent<EnemyPatrol>() != null)
                 {
                     GetComponent<EnemyPatrol>().enabled = false;
-                    Die();
+                    StartCoroutine(Die());
                 }
                 if(GetComponent<AIChase>() != null)
                 {
                     GetComponent<AIChase>().enabled = false;
-                    Die();
+                    StartCoroutine(Die());
                 }
                 dead = true;
                 
             }
         }
     }
-    public void Die()
+    public IEnumerator Die()
     {
-        Destroy(gameObject);
+        Debug.Log("die");
+        yield return new WaitForSeconds(1);
+        this.gameObject.SetActive(false);
+        uIManager.GameOver();
+        yield return null;
     }
     public void AddHealth(float _value)
     {
@@ -69,6 +75,7 @@ public class Health : MonoBehaviour
     public void Respawm()
     {
         dead = false;
+        this.gameObject.SetActive(true);
         AddHealth(startingHealth);
         anim.ResetTrigger("die");
         anim.Play("Idle");

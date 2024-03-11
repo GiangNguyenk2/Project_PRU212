@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 3901052070268559598}
   - component: {fileID: 1247466916085421872}
   - component: {fileID: 3372272084915227967}
-  - component: {fileID: 8490245533660400521}
   - component: {fileID: 3069133136022966091}
   - component: {fileID: 7777944666141860098}
   - component: {fileID: 8648724970886845461}
@@ -195,26 +194,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8490245533660400521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5087680166639203169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bad90225a3078c64db7ad940e9a90d3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  jumpPower: 20
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &3069133136022966091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +219,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  jumpDouble: 0
 --- !u!95 &7777944666141860098
 Animator:
   serializedVersion: 5
@@ -277,6 +255,7 @@ MonoBehaviour:
   startingHealth: 3
   iFramesDuration: 1.5
   numberOfFlashes: 3
+  uIManager: {fileID: 0}
 --- !u!114 &7710129511402968582
 MonoBehaviour:
   m_ObjectHideFlags: 0
