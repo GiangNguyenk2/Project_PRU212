@@ -15,6 +15,9 @@ public class JumpDouble : MonoBehaviour
     private BoxCollider2D boxCollider;
     private float horizontalInput;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip jumpSound;
+
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
@@ -80,6 +83,7 @@ public class JumpDouble : MonoBehaviour
         {
             if (isGrounded())
             {
+                AudioManager.instance.PlaySound(jumpSound);
                 body.velocity = new Vector2(body.velocity.x, jumpPower);
             }
             else

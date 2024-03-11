@@ -9,6 +9,7 @@ TagManager:
   - Items
   - Enemy
   - CheckPoint
+  - Audio
   layers:
   - Default
   - TransparentFX

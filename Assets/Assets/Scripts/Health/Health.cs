@@ -14,6 +14,10 @@ public class Health : MonoBehaviour
     [SerializeField] private int numberOfFlashes;
     private SpriteRenderer spriteRend;
 
+    [Header("Dead Sound")]
+    [SerializeField] private AudioClip deathSound;
+    [SerializeField] private AudioClip hurtSound;
+
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -28,6 +32,7 @@ public class Health : MonoBehaviour
         {
             anim.SetTrigger("hurt");
             StartCoroutine(Invunerability());
+            AudioManager.instance.PlaySound(hurtSound);
         }
         else
         {
@@ -36,6 +41,10 @@ public class Health : MonoBehaviour
                 anim.SetTrigger("die");
                 GetComponent<PlayerMovement>().enabled = false;
                 dead = true;
+
+
+                dead = true;
+                AudioManager.instance.PlaySound(deathSound);
                 
             }
         }
